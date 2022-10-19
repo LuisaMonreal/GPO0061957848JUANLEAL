@@ -80,7 +80,7 @@ int main()
 
 		case 4://Lista de Articulos Vigentes
 			int opcion2;
-			printf("\nBuscar por:\n1.-Numero de articulo\n 2.-Mostrar Todo\n");
+			printf("\nBuscar por:\n1.-Numero de articulo\n 2.-Mostrar Todo\n3.-Clasificación\n4.-Genero\n");
 			scanf_s("%d", &opcion2);
 			switch(opcion2)
 			{
