@@ -135,11 +135,11 @@ int main()
 			break;
 
 		case 6://Salir
-			cout << "\n" << "Muchas gracias por utilizar este programa :D\n";
+			printf("\nMuchas gracias por utilizar este programa :D\n");
 			break;
 
 		default:
-			cout << "\n" << "Por favor ingrese una opcion valida :P\n";
+	                printf("\nPor favor ingrese una opcion valida :P\n");
 			return main();
 
 
