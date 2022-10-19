@@ -1,4 +1,4 @@
-//Primer Avance proyecto de Programación Básica.
+//Segundo Avance proyecto de Programación Básica.
 //DATOS DE IDENTIFICACIÓN.
 //Grupo: 006 A2022.
 //Nombre del Alumno: Juan Enrique Leal Gutiérrez.
@@ -82,9 +82,9 @@ int main()
 			int opcion2;
 			printf("\nBuscar por:\n1.-Numero de articulo\n 2.-Mostrar Todo\n3.-Clasificación\n4.-Genero\n");
 			scanf_s("%d", &opcion2);
-			switch(opcion2)
+			switch (opcion2)
 			{
-				case 1://Buscar por numero de articulo
+			case 1://Buscar por numero de articulo
 				printf("\ningrese Numero de articulo\n");
 				scanf_s("%d", &busqueda);
 
@@ -106,11 +106,32 @@ int main()
 						printf("\nEl precio total del articulo es:%f\n", compras[i].total);
 					}
 				}
-			
+
 				case 2//Mostrar todos los articulos. 
-				for (int i = 0; i < 3; i++)
-				{
-					if (compras[i].numart != 0)
+					for (int i = 0; i < 3; i++)
+					{
+						if (compras[i].numart != 0)
+						{
+							printf("\nEl Numero de articulo es:%d\n", compras[i].numart);
+							printf("\nEl Nombre del articulo es:%s\n", compras[i].articulo.c_str());
+							printf("\nLa fecha de salida del articulo es:%s\n", compras[i].fecha.c_str());
+							printf("\nLa clasificacion del articulo es:%s\n", compras[i].clasi.c_str());
+							printf("\nLas caracteristicas del articulo son:%s\n", compras[i].carater.c_str());
+							printf("\nLa descripcion del articulo es:%s\n", compras[i].descripcion.c_str());
+							printf("\nEl genero del articulo es:%s\n", compras[i].genero.c_str());
+							printf("\nLas plataformas en las que esta disponible el articulo son:%s\n", compras[i].plataforma.c_str());
+							printf("\nEl precio unitario del articulo es:%f\n", compras[i].preuni);
+							printf("\nEl iva del precio del articulo es:%f\n", compras[i].iva);
+							printf("\nEl precio total del articulo es:%f\n", compras[i].total);
+						}
+					}
+				case 3//Buscar por clasificacion.
+					string clasifica;
+					printf("\nIngrese la clasificación del articulo a buscar:\n");
+					scanf_s("%s", clasifica);
+					cin.ignore();
+					getline(cin, clasifica);
+					if (classica == compras[i].clasi)
 					{
 						printf("\nEl Numero de articulo es:%d\n", compras[i].numart);
 						printf("\nEl Nombre del articulo es:%s\n", compras[i].articulo.c_str());
@@ -124,63 +145,42 @@ int main()
 						printf("\nEl iva del precio del articulo es:%f\n", compras[i].iva);
 						printf("\nEl precio total del articulo es:%f\n", compras[i].total);
 					}
-				}
-				case 3//Buscar por clasificacion.
-					string clasifica;
-					printf("\nIngrese la clasificación del articulo a buscar:\n");
-					scanf_s("%s", clasifica);
-					cin.ignore();
-					getline(cin, clasifica);
-					if(classica==compras[i].clasi)
-					{
-					        printf("\nEl Numero de articulo es:%d\n", compras[i].numart);
-						printf("\nEl Nombre del articulo es:%s\n", compras[i].articulo.c_str());
-						printf("\nLa fecha de salida del articulo es:%s\n", compras[i].fecha.c_str());
-						printf("\nLa clasificacion del articulo es:%s\n", compras[i].clasi.c_str());
-						printf("\nLas caracteristicas del articulo son:%s\n", compras[i].carater.c_str());
-						printf("\nLa descripcion del articulo es:%s\n", compras[i].descripcion.c_str());
-						printf("\nEl genero del articulo es:%s\n", compras[i].genero.c_str());
-						printf("\nLas plataformas en las que esta disponible el articulo son:%s\n", compras[i].plataforma.c_str());
-						printf("\nEl precio unitario del articulo es:%f\n", compras[i].preuni);
-						printf("\nEl iva del precio del articulo es:%f\n", compras[i].iva);
-						printf("\nEl precio total del articulo es:%f\n", compras[i].total);
-					}
-				        else
-					{
-						printf("\nEsa clasificación no esta Registrada :P\n");
-			                        return case3();
-					}
-					
-					
-				case 4//Buscar por genero.
-					string gener;
-					printf("\nIngrese la clasificación del articulo a buscar:\n");
-					scanf_s("%s", gener);
-					cin.ignore();
-					getline(cin, gener);
-					if(gener==compras[i].genero)
-					{
-					        printf("\nEl Numero de articulo es:%d\n", compras[i].numart);
-						printf("\nEl Nombre del articulo es:%s\n", compras[i].articulo.c_str());
-						printf("\nLa fecha de salida del articulo es:%s\n", compras[i].fecha.c_str());
-						printf("\nLa clasificacion del articulo es:%s\n", compras[i].clasi.c_str());
-						printf("\nLas caracteristicas del articulo son:%s\n", compras[i].carater.c_str());
-						printf("\nLa descripcion del articulo es:%s\n", compras[i].descripcion.c_str());
-						printf("\nEl genero del articulo es:%s\n", compras[i].genero.c_str());
-						printf("\nLas plataformas en las que esta disponible el articulo son:%s\n", compras[i].plataforma.c_str());
-						printf("\nEl precio unitario del articulo es:%f\n", compras[i].preuni);
-						printf("\nEl iva del precio del articulo es:%f\n", compras[i].iva);
-						printf("\nEl precio total del articulo es:%f\n", compras[i].total);
-					}
 					else
 					{
-						printf("\nEse genero no esta Registrado :P\n");
-			                        return case3();
+						printf("\nEsa clasificación no esta Registrada :P\n");
+						return case 3();
 					}
-					
-				default:
-			        printf("\nPor favor ingrese una opcion valida :P\n");
-			        return case4();
+
+
+					case 4//Buscar por genero.
+						string gener;
+						printf("\nIngrese la clasificación del articulo a buscar:\n");
+						scanf_s("%s", gener);
+						cin.ignore();
+						getline(cin, gener);
+						if (gener == compras[i].genero)
+						{
+							printf("\nEl Numero de articulo es:%d\n", compras[i].numart);
+							printf("\nEl Nombre del articulo es:%s\n", compras[i].articulo.c_str());
+							printf("\nLa fecha de salida del articulo es:%s\n", compras[i].fecha.c_str());
+							printf("\nLa clasificacion del articulo es:%s\n", compras[i].clasi.c_str());
+							printf("\nLas caracteristicas del articulo son:%s\n", compras[i].carater.c_str());
+							printf("\nLa descripcion del articulo es:%s\n", compras[i].descripcion.c_str());
+							printf("\nEl genero del articulo es:%s\n", compras[i].genero.c_str());
+							printf("\nLas plataformas en las que esta disponible el articulo son:%s\n", compras[i].plataforma.c_str());
+							printf("\nEl precio unitario del articulo es:%f\n", compras[i].preuni);
+							printf("\nEl iva del precio del articulo es:%f\n", compras[i].iva);
+							printf("\nEl precio total del articulo es:%f\n", compras[i].total);
+						}
+						else
+						{
+							printf("\nEse genero no esta Registrado :P\n");
+							return case 3();
+						}
+
+					default:
+						printf("\nPor favor ingrese una opcion valida :P\n");
+						return case 4 ();
 			}
 			return main();
 			break;
@@ -195,7 +195,7 @@ int main()
 			break;
 
 		default:
-	                printf("\nPor favor ingrese una opcion valida :P\n");
+			printf("\nPor favor ingrese una opcion valida :P\n");
 			return main();
 
 
