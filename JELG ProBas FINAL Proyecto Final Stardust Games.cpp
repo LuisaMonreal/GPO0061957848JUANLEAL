@@ -138,7 +138,7 @@ void alta()
 		scanf_s("%f", &preuni[i]);
 		iva[i] = preuni[i] * .16;
 		total[i] = preuni[i] + iva[i];
-		if ((registros - 1) == i)
+	/*if ((registros - 1) == i)
 		{
 			int desicion;
 			printf("\nDesea dar alta otro articulo \n 1-.Si\n 2.-No\n");
@@ -156,6 +156,7 @@ void alta()
 
 			}
 		}
+		*/
 	}
 }
 
@@ -270,6 +271,7 @@ void lista()
 				printf("\nEl precio total del articulo es:%f\n", total[i]);
 			}
 		}
+		break;
 
 	default:
 		printf("\nPor favor ingrese una opcion valida :P\n");
@@ -286,7 +288,7 @@ void archivo()
 	float decimal;
 	string texto2;
 
-	nombrearchivo = "Articulosprueba";
+	nombrearchivo = "Articulosprueba.txt";
 
 	archivo.open(nombrearchivo.c_str(), ios::out);
 
@@ -311,12 +313,7 @@ void archivo()
 
 	for (int i = 0; i < registros; i++)
 	{
-		if (numart[i] == 0)
-		{
-			texto = numart[i];
-			archivo << texto << "\t" << "\n";
-		}
-		else
+		if (numart[i] != 0)
 		{
 			texto = numart[i];
 			archivo << texto << "\t";
